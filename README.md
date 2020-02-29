@@ -23,7 +23,7 @@ Open "Conf/target.txt" and change ACTIVE_PLATFORM and TARGET_ARCH:
 TARGET_ARCH           = IA32 X64
 ACTIVE_PLATFORM       = OvmfPkg/OvmfPkgX64.ds
 
-5) Copy "hellow" to edk2 directory.
+5) Create "hellow" directory in edk2 root directory and copy "hellow.c" and "hellow.inf" into "hellow" directory.
 
 6) Add "hellow" to "OvmfPkg/OvmfPkgX64.dsc" into section "Components":
 
