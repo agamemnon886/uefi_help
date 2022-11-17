@@ -9,7 +9,7 @@ $ git submodule update --init --recursive
 ```
 2) Install nasm and uuid-dev
 ```
-$ sudo apt-get install uuid-dev nasm
+$ sudo apt-get install uuid-dev nasm libuuid libuuid-dev
 ```
 3) Build tools
 ```
