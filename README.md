@@ -22,7 +22,7 @@ $ make -C BaseTools
 Open "Conf/target.txt" and change ACTIVE_PLATFORM and TARGET_ARCH:
 ```
 TARGET_ARCH           = X64
-ACTIVE_PLATFORM       = OvmfPkg/OvmfPkgX64.ds
+ACTIVE_PLATFORM       = OvmfPkg/OvmfPkgX64.dsc
 ```
 5) Create "hello" directory in edk2 root directory and copy "hello.c" and "hello.inf" into "hello" directory.
 
