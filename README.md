@@ -5,6 +5,7 @@ Getting started with EDK2 in Linux, hello world
 1) Download EDK2
 ```
 $ git clone https://github.com/tianocore/edk2.git
+$ cd edk2
 $ git submodule update --init --recursive
 ```
 2) Install nasm and uuid-dev
