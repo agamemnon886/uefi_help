@@ -14,8 +14,8 @@ $ sudo apt-get install uuid-dev nasm libuuid libuuid-dev
 ```
 3) Build tools
 ```
+$ cd edk2
 $ source edksetup.sh
-
 $ make -C BaseTools
 ```
 4) Configure build environment
@@ -24,6 +24,7 @@ Open "Conf/target.txt" and change ACTIVE_PLATFORM and TARGET_ARCH:
 ```
 TARGET_ARCH           = X64
 ACTIVE_PLATFORM       = OvmfPkg/OvmfPkgX64.dsc
+TOOL_CHAIN_TAG        = GCC5
 ```
 5) Create "hello" directory in edk2 root directory and copy "hello.c" and "hello.inf" into "hello" directory.
 
