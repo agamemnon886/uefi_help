@@ -12,13 +12,23 @@ $ git submodule update --init --recursive
 ```
 $ sudo apt-get install uuid-dev nasm libuuid libuuid-dev
 ```
-3) Build tools
+3) Install nasm 2.15
+```
+	wget http://www.nasm.us/pub/nasm/releasebuilds/2.15.05/nasm-2.15.05.tar.bz2
+	tar xfj nasm-2.15.05.tar.bz2
+	cd nasm-2.15.05/
+	./autogen.sh
+	./configure --prefix=/usr/local/ 
+	make 
+	sudo make install
+```
+4) Build tools
 ```
 $ cd edk2
 $ source edksetup.sh
 $ make -C BaseTools
 ```
-4) Configure build environment
+5) Configure build environment
 
 Open "Conf/target.txt" and change ACTIVE_PLATFORM and TARGET_ARCH:
 ```
@@ -26,27 +36,27 @@ TARGET_ARCH           = X64
 ACTIVE_PLATFORM       = OvmfPkg/OvmfPkgX64.dsc
 TOOL_CHAIN_TAG        = GCC5
 ```
-5) Create "hello" directory in edk2 root directory and copy "hello.c" and "hello.inf" into "hello" directory.
+6) Create "hello" directory in edk2 root directory and copy "hello.c" and "hello.inf" into "hello" directory.
 
-6) Add "hello" to "OvmfPkg/OvmfPkgX64.dsc" into section "Components":
+7) Add "hello" to "OvmfPkg/OvmfPkgX64.dsc" into section "Components":
 ```
 [Components]                                                                                                           
    hellow/hello.inf
 ```
 
-7) Build firmware image:
+8) Build firmware image:
 ```
 $ cd edk2
 $ build
 ```
-8) Run QEMU
+9) Run QEMU
 ```
 $ cd /edk2/Build/OvmfX64/DEBUG_GCC5/FV
 $ mkdir hda-contents
 $ cp ../X64/hellow.efi hda-contents/
 $ qemu-system-x86_64 -L . --bios OVMF.fd -hda fat:64:rw:hda-contents -net none
 ```
-9) In UEFI shell input the following commands:
+10) In UEFI shell input the following commands:
 ```
 Shell> fs0:
 FS0:\> hello.efi
